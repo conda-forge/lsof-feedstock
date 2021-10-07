@@ -1,13 +1,12 @@
-{% set name = 'lsof' %}
 {% set version = "4.89" %}
 {% set sha256 = "17688b122b9e0330042625ae6c15c4486699a11e2483e3d0e97ec1642b93d7b2" %}
 
 package:
-  name: {{ name|lower }}
+  name: lsof
   version: {{ version }}
 
 source:
-  url: http://http.debian.net/debian/pool/main/l/{{ name }}/{{ name }}_{{ version }}+dfsg.orig.tar.gz
+  url: http://http.debian.net/debian/pool/main/l/lsof/lsof_{{ version }}+dfsg.orig.tar.gz
   sha256: {{ sha256 }}
   # Following are Debian patches from
   # http://http.debian.net/debian/pool/main/l/lsof/lsof_4.89+dfsg-0.1.debian.tar.xz
@@ -20,15 +19,18 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - perl
+    - {{ compiler('c') }}
+    - make
+    - perl 5.*
+  host:
 
 test:
   commands:
-    - lsof -v
+    - lsof -v 2>&1 | grep -qF '{{ version }}'
     - lsof .
 
 about:
