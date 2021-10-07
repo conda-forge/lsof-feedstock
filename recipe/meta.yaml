@@ -30,7 +30,7 @@ requirements:
 
 test:
   commands:
-    - lsof -v | grep -qF '{{ version }}'
+    - lsof -v 2>&1 | grep -qF '{{ version }}'
     - lsof .
 
 about:
