@@ -1,5 +1,5 @@
-{% set version = "4.89" %}
-{% set sha256 = "17688b122b9e0330042625ae6c15c4486699a11e2483e3d0e97ec1642b93d7b2" %}
+{% set version = "4.91" %}
+{% set sha256 = "f0a53f0fb19a2a10ae0e13a9501d987cfc4a79e66c698430b0965a2f33709e65" %}
 
 package:
   name: lsof
@@ -19,7 +19,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
