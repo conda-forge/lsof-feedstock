@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/lsof-org/lsof/archive/${{ version }}.tar.gz
+  url: https://github.com/lsof-org/lsof/archive/{{ version }}.tar.gz
   sha256: 17688b122b9e0330042625ae6c15c4486699a11e2483e3d0e97ec1642b93d7b2
 
 build:
