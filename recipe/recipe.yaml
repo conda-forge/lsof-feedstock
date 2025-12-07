@@ -29,7 +29,7 @@ tests:
       - lsof .
 
 about:
-  license: BSD-compatible
+  license: lsof
   license_file: COPYING
   summary: LiSt Open Files
   description: |
